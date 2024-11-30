@@ -14,6 +14,7 @@ async function login (email, password) {
 
     const response = await fetch(API_URL + LOGIN_ENDPOINT, {
         method: 'POST',
+        mode: "no-cors",
         headers: {
             'Content-Type': "application/json",
         },
