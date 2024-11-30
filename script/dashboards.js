@@ -5,20 +5,25 @@ fillTable();
 async function fillTable(){
     const tableBody = document.querySelector("#usersTable tbody");
     const users = await fetchUsers();
+    users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
     users.array.forEach(user => {
         const tr = document.createElement("tr");
         const tdName =  document.createElement("td");
         const tdEmail = document.createElement("td"); 
         const tdLastLogin = document.createElement("td");
         const tdBlocked= document.createElement("td");
+        const checkbock = document.createElement("input");
+        checkbock.type = "checkbox";
         tdName.textContent = user.name;
         tdEmail.textContent = user.email;
         tdLastLogin.textContent = user.last_login;
-        tdBlocked.textContent = user.blocked;
+        tdBlocked.textContent = user.blocked? "Blocked" : "Active";
+        tr.appendChild(checkbock)
         tr.appendChild(tdName)
         tr.appendChild(tdEmail)
         tr.appendChild(tdLastLogin)
         tr.appendChild(tdBlocked)
+        tableBody.appendChild(tr);
 
     });
     console.log(users);
