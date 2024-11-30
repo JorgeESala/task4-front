@@ -12,32 +12,36 @@
     
     <div class="login">
         <div class="row ms-0 mw-100">
-            <form class="w-50 d-flex flex-column text-center " id="left-section">
-                <div class="header mt-3 text-white">
-                    <h3>Jorge Sala's project</h3>
-                </div>
-                <div class="inputs w-50 m-auto text-white">
-                    <h4>Register</h4>
-                    <label for="loginEmail" class="visually-hidden">Email</label>
-                    <input type="text" class="form-control mb-3" id="loginEmail" placeholder="email@example.com">
-                    <label for="inputPassword" class="visually-hidden">Password</label>
-                    <input type="password" class="form-control mb-3" id="inputPassword" placeholder="Password">
-                    <button type="submit" class="btn btn-primary mb-3">Sign up</button>
-                </div>
-
-                <div class="form-bottom mb-3 text-white">
-                    
-                    <p>Already have an account? <a href="../index.html"> Log in </a></p>
-                </div>
-            </form>
+            <div class="w-50  text-center " id="left-section">
+                <form class="w-100 h-100 d-flex flex-column" id="registerForm">
+                    <div class="header mt-3 text-white">
+                        <h3>Jorge Sala's project</h3>
+                    </div>
+                    <div class="inputs w-50 m-auto text-white">
+                        <h4>Register</h4>
+                        <label for="signupName" class="visually-hidden">Name</label>
+                        <input type="text" class="form-control mb-3" id="signupName" placeholder="name">
+    
+                        <label for="signupEmail" class="visually-hidden">Email</label>
+                        <input type="text" class="form-control mb-3" id="signupEmail" placeholder="email@example.com">
+                        <label for="signupPassword" class="visually-hidden">Password</label>
+    
+                        <input type="password" class="form-control mb-3" id="signupPassword" placeholder="Password">
+                        <button type="submit" class="btn btn-primary mb-3">Sign up</button>
+                    </div>
+    
+                    <div class="form-bottom mb-3 text-white">
+                        
+                        <p>Already have an account? <a href="../index.html"> Log in </a></p>
+                    </div>
+                </form>
+            </div>
+            
             <div id="right-section" class="w-50 text-center bg-blue">
                 
             </div>
         </div>
-            
-            
-            
-            
     </div>
+    <script src="../script/register.js"></script>
 </body>
 </html>
