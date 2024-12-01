@@ -2,6 +2,7 @@
 const API_URL = "https://task4-back-ru6z.onrender.com/api";
 const USERS_ENDPOINT = "/users";
 fillTable();
+
 async function fillTable(){
     const tableBody = document.querySelector("#usersTable tbody");
     const users = await fetchUsers();
@@ -32,7 +33,6 @@ async function fillTable(){
         tableBody.appendChild(tr);
 
     });
-    console.log(users);
 }
 
 async function fetchUsers(){
@@ -41,7 +41,6 @@ async function fetchUsers(){
         credentials: 'include' 
     });
     const data = await response.json();
-    console.log(data);
     return data;
     
 } 
