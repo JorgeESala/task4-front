@@ -21,7 +21,7 @@ async function fillTable(){
         tdCheckbox.appendChild(checkbox);
         tdName.textContent = user.name;
         tdEmail.textContent = user.email;
-        tdLastLogin.textContent = user.lastLogin;
+        tdLastLogin.textContent =`${user.lastLogin.toLocaleDateString('en-US')} ${user.lastLogin.toLocaleTimeString('en-US')}`;
         tdBlocked.textContent = user.blocked? "Blocked" : "Active";
         tr.appendChild(tdCheckbox)
         tr.appendChild(tdName)
