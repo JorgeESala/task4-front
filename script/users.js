@@ -1,10 +1,9 @@
 
-const API_URL = "https://task4-back-ru6z.onrender.com/api/users";
 
 document.getElementById("blockButton").addEventListener("click", async function (e) {
     usersEmail = getMarkedUsers();
 
-    const response = await fetch(API_URL + "/block", {
+    const response = await fetch(API_URL + "/users/block", {
         method: 'POST',
         headers: {
             'Content-Type': "application/json",
