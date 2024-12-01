@@ -1,6 +1,5 @@
 
 
-document.getElementById("blockButton").addEventListener("click", blockFunction(e,"block"));
 
 let blockFunction = async function (e, status){
     e.preventDefault();
@@ -37,5 +36,4 @@ function getMarkedUsers(){
     
     return markedUsersEmail;
 }
-
-  
+document.getElementById("blockButton").addEventListener("click", blockFunction(e,"block"));
