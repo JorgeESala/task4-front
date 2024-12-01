@@ -5,6 +5,8 @@ fillTable();
 async function fillTable(){
     const tableBody = document.querySelector("#usersTable tbody");
     const users = await fetchUsers();
+    const data = await users.json();
+    console.log(data);
     users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
     users.array.forEach(user => {
         const tr = document.createElement("tr");
