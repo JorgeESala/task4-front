@@ -2,7 +2,7 @@
 
 document.getElementById("blockButton").addEventListener("click", blockFunction(e,"block"));
 
-blockFunction = async function (e, status){
+let blockFunction = async function (e, status){
     e.preventDefault();
     usersEmail = getMarkedUsers();
     console.log(JSON.stringify(usersEmail));
