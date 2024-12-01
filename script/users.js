@@ -1,7 +1,23 @@
 
+const API_URL = "https://task4-back-ru6z.onrender.com/api/users";
+
 document.getElementById("blockButton").addEventListener("click", async function (e) {
-    e.preventDefault();
-    console.log(getMarkedUsers());
+    usersEmail = getMarkedUsers();
+
+    const response = await fetch(API_URL + "/block", {
+        method: 'POST',
+        headers: {
+            'Content-Type': "application/json",
+        },
+        body: usersEmail,
+    });
+
+    if(response.ok){
+        console.log("users Blocked");
+    }else {
+        console.log(response);
+    }
+
 });
 
 function getMarkedUsers(){
