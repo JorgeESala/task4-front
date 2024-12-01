@@ -1,8 +1,9 @@
 
 
 document.getElementById("blockButton").addEventListener("click", async function (e) {
+    e.preventDefault();
     usersEmail = getMarkedUsers();
-
+    console.log(JSON.stringify(usersEmail));
     const response = await fetch(API_URL + "/users/block", {
         method: 'POST',
         headers: {
