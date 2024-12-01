@@ -6,7 +6,7 @@ async function fillTable(){
     const tableBody = document.querySelector("#usersTable tbody");
     const users = await fetchUsers();
 
-    // users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
+    users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
 
     users.forEach(user => {
         const tr = document.createElement("tr");
@@ -16,6 +16,7 @@ async function fillTable(){
         const tdBlocked= document.createElement("td");
         const checkbock = document.createElement("input");
         checkbock.type = "checkbox";
+        checkbock.className = "form-check-input";
         tdName.textContent = user.name;
         tdEmail.textContent = user.email;
         tdLastLogin.textContent = user.last_login;
