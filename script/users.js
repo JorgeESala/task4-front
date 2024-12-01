@@ -14,7 +14,7 @@ function getMarkedUsers(){
         const checkbox = row.querySelector("input[type='checkbox']");
         if (checkbox.checked) { 
         const email = row.cells[EMAIL_COLUMN].textContent; 
-        markedUsersEmail.push(JSON.stringify(email)); 
+        markedUsersEmail.push({email}); 
         }
     });
     
