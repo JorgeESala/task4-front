@@ -9,6 +9,7 @@ async function fillTable(){
     users.sort((a, b) => new Date(b.lastLogin) - new Date(a.lastLogin));
 
     users.forEach(user => {
+        const userDate = new Date(user.lastLogin);
         const tr = document.createElement("tr");
         const tdName =  document.createElement("td");
         const tdEmail = document.createElement("td"); 
@@ -21,7 +22,7 @@ async function fillTable(){
         tdCheckbox.appendChild(checkbox);
         tdName.textContent = user.name;
         tdEmail.textContent = user.email;
-        tdLastLogin.textContent =`${user.lastLogin.toLocaleDateString('en-US')} ${user.lastLogin.toLocaleTimeString('en-US')}`;
+        tdLastLogin.textContent =`${userDate.toLocaleDateString('en-US')} ${userDate.toLocaleTimeString('en-US')}`;
         tdBlocked.textContent = user.blocked? "Blocked" : "Active";
         tr.appendChild(tdCheckbox)
         tr.appendChild(tdName)
