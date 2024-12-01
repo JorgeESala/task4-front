@@ -5,8 +5,10 @@ fillTable();
 async function fillTable(){
     const tableBody = document.querySelector("#usersTable tbody");
     const users = await fetchUsers();
-    users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
-    users.array.forEach(user => {
+
+    // users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
+
+    users.forEach(user => {
         const tr = document.createElement("tr");
         const tdName =  document.createElement("td");
         const tdEmail = document.createElement("td"); 
