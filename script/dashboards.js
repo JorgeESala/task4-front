@@ -14,14 +14,16 @@ async function fillTable(){
         const tdEmail = document.createElement("td"); 
         const tdLastLogin = document.createElement("td");
         const tdBlocked= document.createElement("td");
-        const checkbock = document.createElement("input");
-        checkbock.type = "checkbox";
-        checkbock.className = "form-check-input";
+        const tdCheckbox= document.createElement("td");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "form-check-input";
+        tdCheckbox.appendChild(checkbox);
         tdName.textContent = user.name;
         tdEmail.textContent = user.email;
         tdLastLogin.textContent = user.lastLogin;
         tdBlocked.textContent = user.blocked? "Blocked" : "Active";
-        tr.appendChild(checkbock)
+        tr.appendChild(tdCheckbox)
         tr.appendChild(tdName)
         tr.appendChild(tdEmail)
         tr.appendChild(tdLastLogin)
