@@ -1,5 +1,5 @@
 
-document.getElementById("blockButton").addEventListener("submit", async function (e) {
+document.getElementById("blockButton").addEventListener("click", async function (e) {
     e.preventDefault();
     console.log(getMarkedUsers());
 });
