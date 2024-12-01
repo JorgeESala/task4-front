@@ -34,7 +34,7 @@ function getMarkedUsers(){
         }
     });
     
-    console.log(markedUsersEmail);
+    return markedUsersEmail;
 }
 
   
