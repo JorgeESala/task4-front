@@ -8,7 +8,7 @@ document.getElementById("blockButton").addEventListener("click", async function 
         headers: {
             'Content-Type': "application/json",
         },
-        body: usersEmail,
+        body: JSON.stringify(usersEmail),
     });
 
     if(response.ok){
