@@ -39,3 +39,6 @@ function getMarkedUsers(){
 document.getElementById("blockButton").addEventListener("click", async function (e) {
     blockFunction(e, "block");
 });
+document.getElementById("unblockButton").addEventListener("click", async function (e) {
+    blockFunction(e, "unblock");
+});
