@@ -36,4 +36,6 @@ function getMarkedUsers(){
     
     return markedUsersEmail;
 }
-document.getElementById("blockButton").addEventListener("click", blockFunction(e,"block"));
+document.getElementById("blockButton").addEventListener("click", async function (e) {
+    blockFunction(e, "block");
+});
