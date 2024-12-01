@@ -5,7 +5,6 @@ fillTable();
 async function fillTable(){
     const tableBody = document.querySelector("#usersTable tbody");
     const users = await fetchUsers();
-    const data = await users.json();
     users.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
     users.array.forEach(user => {
         const tr = document.createElement("tr");
@@ -35,7 +34,6 @@ async function fetchUsers(){
         method: 'GET',
         credentials: 'include' 
     });
-    console.log(response);
     const data = await response.json();
     console.log(data);
     return data;
