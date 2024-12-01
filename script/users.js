@@ -1,10 +1,12 @@
 
 
-document.getElementById("blockButton").addEventListener("click", async function (e) {
+document.getElementById("blockButton").addEventListener("click", blockFunction(e,"block"));
+
+blockFunction = async function (e, status){
     e.preventDefault();
     usersEmail = getMarkedUsers();
     console.log(JSON.stringify(usersEmail));
-    const response = await fetch(API_URL + "/users/block", {
+    const response = await fetch(API_URL + "/users/" + status, {
         method: 'POST',
         headers: {
             'Content-Type': "application/json",
@@ -13,12 +15,11 @@ document.getElementById("blockButton").addEventListener("click", async function 
     });
 
     if(response.ok){
-        console.log("users Blocked");
+        console.log("Users " + status == "block"? "blocked" : "unblocked");
     }else {
         console.log(response);
     }
-
-});
+}
 
 function getMarkedUsers(){
     const EMAIL_COLUMN = 2;
